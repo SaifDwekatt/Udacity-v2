@@ -1,9 +1,6 @@
-import { checkForName } from './nameChecker';
+const { checkForName } = require("./nameChecker");
 
-const form = document.getElementById('urlForm');
-form.addEventListener('submit', handleSubmit);
-
-async function handleSubmit(event) {
+function handleSubmit(event) {
     event.preventDefault();
 
     const formText = document.getElementById("name").value;
@@ -15,19 +12,16 @@ async function handleSubmit(event) {
 
     checkForName(formText);
 
-    try {
-        const response = await fetch("http://localhost:8000/analyze", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: formText }),
-        });
-
-        const data = await response.json();
+    fetch("http://localhost:8000/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: formText }),
+    })
+    .then(response => response.json())
+    .then(data => {
         document.getElementById("results").innerHTML = `<p>Sentiment: ${data.score_tag}</p>`;
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Failed to analyze text.");
-    }
+    })
+    .catch(error => console.error("Error:", error));
 }
 
-export { handleSubmit };
+module.exports = { handleSubmit };

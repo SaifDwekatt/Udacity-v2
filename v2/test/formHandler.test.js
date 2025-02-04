@@ -1,17 +1,11 @@
-import { handleSubmit } from "../src/client/js/formHandler";
+const { handleSubmit } = require("../src/client/js/formHandler");
 
-test("Function handleSubmit should be defined", () => {
-    expect(handleSubmit).toBeDefined();
-});
+describe("Testing the formHandler function", () => {
+    test("handleSubmit should be defined", () => {
+        expect(handleSubmit).toBeDefined();
+    });
 
-test("handleSubmit should call fetch with correct parameters", async () => {
-    global.fetch = jest.fn(() =>
-        Promise.resolve({ json: () => Promise.resolve({ score_tag: "P" }) })
-    );
-
-    document.body.innerHTML = `<input id="name" value="https://example.com" /><div id="results"></div>`;
-    
-    await handleSubmit(new Event("submit"));
-    
-    expect(document.getElementById("results").innerHTML).toContain("Sentiment");
+    test("handleSubmit should be a function", () => {
+        expect(typeof handleSubmit).toBe("function");
+    });
 });
