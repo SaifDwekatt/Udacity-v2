@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,62 +90,59 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { checkForName } = require("./nameChecker");
 &nbsp;
-function <span class="fstat-no" title="function not covered" >handleSubmit(</span>event) {
-<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
+function handleSubmit(event) {
+    event.preventDefault();
 &nbsp;
-    const formText = <span class="cstat-no" title="statement not covered" >document.getElementById("name").value;</span>
+    const formText = document.getElementById("name").value;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!formText) {</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!formText) {
 <span class="cstat-no" title="statement not covered" >        alert("Please enter a URL.");</span>
 <span class="cstat-no" title="statement not covered" >        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    checkForName(formText);</span>
+    checkForName(formText);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    fetch("http://localhost:8000/analyze", {</span>
+    fetch("http://localhost:8000/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: formText }),
     })
-    .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
-    .then(<span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
-<span class="cstat-no" title="statement not covered" >        document.getElementById("results").innerHTML = `&lt;p&gt;Sentiment: ${data.score_tag}&lt;/p&gt;`;</span>
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+        document.getElementById("results").innerHTML = `&lt;p&gt;Sentiment: ${data.score_tag}&lt;/p&gt;`;
     })
     .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; <span class="cstat-no" title="statement not covered" >console.error("Error:", error))</span>;
 }
 &nbsp;
-// Use CommonJS export instead of ES6 export
 module.exports = { handleSubmit };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -154,7 +151,7 @@ module.exports = { handleSubmit };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-04T10:02:34.546Z
+                at 2025-02-04T10:24:14.122Z
             </div>
         <script src="prettify.js"></script>
         <script>
